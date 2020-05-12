@@ -97,3 +97,14 @@ const aType1: AType = [1];
 const aType2: AType = 0;
 const aType3: AType = true;
 const aType4: AType = "1";
+
+//函数表达式(可选参数)
+type FnType = (a: string, b?: number) => string;
+
+// 默认参数
+const aFn: FnType = (a = "GET", b) => {
+  return "111";
+}
+
+// 剩余参数
+type FnType1 = (...num: number[]) => void;
