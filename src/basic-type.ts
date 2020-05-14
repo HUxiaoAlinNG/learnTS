@@ -108,3 +108,5 @@ const aFn: FnType = (a = "GET", b) => {
 
 // 剩余参数
 type FnType1 = (...num: number[]) => void;
+
+export { }
