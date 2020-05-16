@@ -10,8 +10,8 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // 类装饰器(实验性属性，需设置experimentalDecorators为true)，用来增加属性或替换类
-var Lin2;
-(function (Lin2_1) {
+var a;
+(function (a) {
     // 参数类型有3种写法：typeof Lin / Function / new () => Lin / any
     function enhancer(target) {
         target.prototype.name = "lin";
@@ -61,9 +61,9 @@ var Lin2;
         ], Lin2);
         return Lin2;
     }());
-})(Lin2 || (Lin2 = {}));
-var aNamespace;
-(function (aNamespace) {
+})(a || (a = {}));
+var b;
+(function (b_1) {
     /*
     属性装饰器
     @param target 如果是静态成员，则表示类的构造函数；如果是实例成员，则为类的原型对象
@@ -123,9 +123,8 @@ var aNamespace;
         ], Lin.prototype, "setName", null);
         return Lin;
     }());
-})(aNamespace || (aNamespace = {}));
-var bb;
-(function (bb) {
+})(b || (b = {}));
+(function (b) {
     /*
     装饰器执行顺序:
     - 多个同类装饰器时，由下往上执行
@@ -214,4 +213,4 @@ var bb;
     - classDecorator2
     - classDecorator1
     */
-})(bb || (bb = {}));
+})(b || (b = {}));

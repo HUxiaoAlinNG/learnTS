@@ -13,24 +13,31 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-function AFn(type) {
-    return type.a;
-}
-var bObj = {
-    a: "1",
-    b: 2,
-    c: "3"
-};
-AFn(bObj);
-// 接口兼容性
+// ts为结构类型系统，只会比较结构，不关心 类型
 var a;
-var b = "1";
-a = b;
+(function (a) {
+    function AFn(type) {
+        return type.a;
+    }
+    var bObj = {
+        a: "1",
+        b: 2,
+        c: "3"
+    };
+    AFn(bObj);
+})(a || (a = {}));
+var b;
+(function (b_1) {
+    // 接口兼容性
+    var a;
+    var b = "1";
+    a = b;
+    var c;
+    var d = "1";
+    c = d;
+})(b || (b = {}));
 var c;
-var d = "1";
-c = d;
-var aa;
-(function (aa) {
+(function (c_1) {
     // 不推荐，但是不报错
     var Ani = /** @class */ (function () {
         function Ani() {
@@ -47,9 +54,9 @@ var aa;
     var a = new Bni();
     var b = new Ani();
     var c = { a: "1" };
-})(aa || (aa = {}));
-var bb;
-(function (bb) {
+})(c || (c = {}));
+var d;
+(function (d) {
     // 枚举与数字类型兼容性
     var Color;
     (function (Color) {
@@ -60,4 +67,4 @@ var bb;
     a = Color.Red;
     var b;
     b = 1;
-})(bb || (bb = {}));
+})(d || (d = {}));

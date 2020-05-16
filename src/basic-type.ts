@@ -36,10 +36,6 @@ const arr2: Array<number> = [1, 2, 3];
 // 元组类型(类型和数量确定)
 const arr3: [number, string] = [1, "3"];
 
-const ele: HTMLElement | null = document.getElementById("root");
-// 非空断言(能确定非空则使用)
-ele!.style.color = "red";
-
 // null/undefined为其他类型的子类型，可赋值给其他类型，但是tsconfig.json里 strictNullChecks 属性 需设置为false
 let num: number = 1;
 num = undefined;
@@ -53,7 +49,7 @@ function Fn(name: string): void {
   return null;
 }
 
-// never 永远不会出现的值，为null/undefined的自类型
+// never 永远不会出现的值，为null/undefined的子类型
 function err(msg: string): never {
   throw new Error("error");
 }
@@ -63,9 +59,7 @@ const err1: never = err("111");
 // 1. void可以赋值undefined/null，never则永远没有值
 // 2. 定义void返回值的函数可以正常返回，never则无法正常返回，或者死循环，或者无法达到
 function loop(): never {
-  while (true) {
-
-  }
+  while (true) { }
 }
 
 function checkType(a: number | string) {
@@ -90,6 +84,9 @@ let abc: string | number;
 // 写法二
 (<number>abc).toFixed();
 
+const ele: HTMLElement | null = document.getElementById("root");
+// 非空断言(能确定非空则使用)
+ele!.style.color = "red";
 
 // 字面量类型
 type AType = 0 | "1" | true | [1];
@@ -108,5 +105,7 @@ const aFn: FnType = (a = "GET", b) => {
 
 // 剩余参数
 type FnType1 = (...num: number[]) => void;
+
+const aFn1: FnType1 = (...num) => { };
 
 export { }

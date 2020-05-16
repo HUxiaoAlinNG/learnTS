@@ -35,10 +35,6 @@ var Person = /** @class */ (function () {
 // class和interface区别
 // - interface只是一个类型，用来修饰对象或抽象行为的，ts编译后消失
 // - class既是接口也是类（构造函数），可以被实例化，ts编译后还在
-// 类和抽象类区别
-// - 都能实现接口
-// - 抽象类不能被实例化
-// - 类可以被实例化
 // extends和implements区别
 // 类才能实现接口，implements
 // 接口可以继承接口，extends

@@ -1,5 +1,5 @@
 // 类装饰器(实验性属性，需设置experimentalDecorators为true)，用来增加属性或替换类
-namespace Lin2 {
+namespace a {
   interface Lin {
     name: string;
     getName: () => string;
@@ -38,7 +38,7 @@ namespace Lin2 {
   @enhanceReplaceClass
   class Lin2 { }
 }
-namespace aNamespace {
+namespace b {
   /* 
   属性装饰器
   @param target 如果是静态成员，则表示类的构造函数；如果是实例成员，则为类的原型对象
@@ -93,7 +93,7 @@ namespace aNamespace {
   }
 }
 
-namespace bb {
+namespace b {
   /*
   装饰器执行顺序:
   - 多个同类装饰器时，由下往上执行
