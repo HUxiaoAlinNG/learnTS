@@ -55,6 +55,17 @@ class Person implements PersonType {
 
 }
 
+// 交叉类型
+interface obj2 {
+  age: string;
+}
+interface obj3 {
+  name: string;
+}
+let obj4: obj2 & obj3
+obj4.age = "age"
+obj4.name = "name"
+
 
 // 避免Animal已经在别的模块定义，通过这个属性，将这个文件模块化
 export { }

@@ -30,6 +30,9 @@ var Person = /** @class */ (function () {
     };
     return Person;
 }());
+var obj4;
+obj4.age = "age";
+obj4.name = "name";
 // type和interface区别
 // - type只是一个类型别名，interface才是真正的类型
 // class和interface区别

@@ -59,6 +59,20 @@ class Person implements PersonType {
 }
 ```
 
+#### 交叉类型
+```js
+interface obj2 {
+  age: string;
+}
+interface obj3 {
+  name: string;
+}
+// 包含obj2和obj3所有属性
+let obj4: obj2 & obj3
+obj4.age = "age"
+obj4.name = "name" 
+```
+
 ###### 衍生问题1：type和interface区别
 ```javascript
 type只是一个类型别名，interface才是真正的类型
